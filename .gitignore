@@ -24,6 +24,12 @@
 # Prerequisites
 *.d
 
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
 # Compiled Object files
 *.slo
 *.lo
@@ -53,5 +59,21 @@
 *.exe
 *.out
 *.app
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
 # End of https://www.toptal.com/developers/gitignore/api/c++
