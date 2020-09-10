@@ -34,4 +34,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Test
-        run: build/test/CppWebserver_test.exe
+        run: ./build/test/CppWebserver_test
