@@ -16,9 +16,6 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: windows-latest
-    defaults:
-      run:
-        shell: msys2 {0}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,7 +23,15 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - uses: msys2/setup-msys2@v2
+          
+      # Install latest mingw
+      - run: choco install mingw --version 8.1.0
+
+      # Version checking
+      - run: gcc --version
+      - run: g++ --version
+      - run: make --version
+      - run: cmake --version
 
       # Runs a single command using the runners shell
       - name: Generate Makefiles
