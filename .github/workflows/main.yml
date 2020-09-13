@@ -28,7 +28,7 @@ jobs:
           submodules: true
       - uses: msys2/setup-msys2@v2
         with:
-          install: gcc make cmake
+          install: mingw-w64-x86_64-gcc mingw-w64-x86_64-make cmake
       
       # Version checking
       - name: Version checking
