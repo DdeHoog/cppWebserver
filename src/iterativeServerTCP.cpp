@@ -4,18 +4,19 @@
 #include<thread>
 #include<sstream>
 #include<vector>
-#pragma comment (lib, "Ws2_32.lib")
 
-void main() {
+int main() {
+    int number = 666;
+
     //intialising winsock
-    WSADATA someData //init variable
+    WSADATA someData; //init variable
     WSAStartup(MAKEWORD(2, 2), &someData); //startup function, params: WS version (2) and the WSAData variable
 
     //CREATING SERVER SOCKET
     sockaddr_in listen_address;
-    listen_address.sin_famliy = AF_INET; //specify family of the socket. Type of adress, for ipv4 use AF_INET.
-    listen_address.sin_port = htons(666); //set the port for the socket address. Use the htons function to do this.
-    listen_address.sin_addr.S_un.S_addr = INADDR_ANY 
+    listen_address.sin_family = AF_INET; //specify family of the socket. Type of adress, for ipv4 use AF_INET.
+    listen_address.sin_port = htons(number); //set the port for the socket address. Use the htons function to do this.
+    listen_address.sin_addr.S_un.S_addr = INADDR_ANY;
     /*specifies which clients can connect to the server. 
     * using INADDR_ANY = in adress any, anyone can connect.
     * see https://stackoverflow.com/questions/23187496/what-is-the-meaning-of-sin-addr-s-addr-and-inet-addr 
@@ -50,4 +51,5 @@ void main() {
    closesocket(listen_socket);
    WSACleanup();
 
+    return 0;
 }
