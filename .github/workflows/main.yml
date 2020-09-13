@@ -27,12 +27,12 @@ jobs:
         with:
           submodules: true
       - uses: msys2/setup-msys2@v2
+        with:
+          install: gcc make cmake
       
       # Version checking
-      - run: gcc --version
-      - run: g++ --version
-      - run: make --version
-      - run: cmake --version
+      - name: Version checking
+        run: gcc --version && make --version && cmake --version
 
       # Runs a single command using the runners shell
       - name: Generate Makefiles
