@@ -1,4 +1,10 @@
-cmake_minimum_required(VERSION 2.8)
-project(cppwebserver)
-add_executable(cppwebserver src/example.cpp)
-install(TARGETS cppwebserver DESTINATION build)
+cmake_minimum_required(VERSION 3.10)
+project(CppWebserver)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(src)
+
+add_subdirectory(src)
+add_subdirectory(test)
+add_subdirectory(lib/googletest)
