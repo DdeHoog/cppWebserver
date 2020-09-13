@@ -32,7 +32,7 @@ jobs:
       
       # Version checking
       - name: Version checking
-        run: gcc --version && make --version && cmake --version
+        run: gcc --version && mingw32-make --version && cmake --version
 
       # Runs a single command using the runners shell
       - name: Generate Makefiles
