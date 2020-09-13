@@ -1,9 +1,9 @@
 //tutorial source: https://www.youtube.com/watch?v=XZ15UEu3FzE
-#include<iostream>
-#include<WS2tcpip.h>
-#include<thread>
-#include<sstream>
-#include<vector>
+#include <iostream>
+#include <WS2tcpip.h>
+#include <thread>
+#include <sstream>
+#include <vector>
 
 int main() {
     int number = 666;
