@@ -76,4 +76,7 @@ _deps
 # External projects
 *-prefix/
 
+# Exclude build filder
+build/*
+
 # End of https://www.toptal.com/developers/gitignore/api/cmake
