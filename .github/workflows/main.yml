@@ -15,7 +15,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -23,10 +23,14 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      
+      # Version checking
+      - name: Version checking
+        run: gcc --version && mingw32-make --version && cmake --version
 
       # Runs a single command using the runners shell
       - name: Generate Makefiles
-        run: mkdir build && cd build && cmake ..
+        run: mkdir build && cd build && cmake -G "Unix Makefiles" -D CMAKE_C_COMPILER=gcc -D CMAKE_CXX_COMPILER=g++ ..
 
       # Runs a set of commands using the runners shell
       - name: Build
