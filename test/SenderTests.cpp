@@ -3,7 +3,7 @@
 
 TEST(SenderTests, Sendtest) {
    
-    EXPECT_EQ (Sender::Send(std::string "host", std::string "/html/index", std::string "type", std::string "version", std::string "errorcode", std::string "statusmessage"),
+    EXPECT_EQ (Sender::Send("host", "/html/index", "type", "version", "errorcode", "statusmessage")
      "version errorcode statusmessage\nContent-Type: type\nContent-Length: 777\n<html>
     <head>
     <title>Home</title>
