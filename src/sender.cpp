@@ -1,27 +1,37 @@
+#include "Sender.hpp"
 #include <iostream>
+#include <conio.h>
 #include <fstream>
 #include <WS2tcpip.h>
 #include <thread>
 #include <sstream>
 #include <vector>
+#include <stdio.h>
 
-string Sender(string host, string file, string type, string version, string errorcode, string statusmessage){
 
-    string message = ContentsOf(file); //add file content naar de message variable instead of title
+std::string Sender::Send(std::string host, std::string file, std::string type, std::string version, std::string errorcode, std::string statusmessage){
+
+    std::string message = ContentsOf(file); 
     int size = SizeOf(file);
-    char *response = "%s %s %s\nContent-Type: %s\nContent-Length: %i\n%s",version, errorcode, statusmessage type, size, message;
+    char buffer[size + size];
+    sprintf(buffer, "%s %s %s\nContent-Type: %s\nContent-Length: %i\n%s",version, errorcode, statusmessage, type, size, message);
+    std::stringstream ss;
+    std::string response;
+    ss << buffer;
+    ss >> response;
+    return response;
 
 }
 
-string ContentsOf(string file){
+std::string Sender::ContentsOf(std::string file){
 
-    string contents; 
-    ifstream fs;
+    std::string contents; 
+    std::ifstream fs;
 
     fs.open(file); 
     if(!fs)
 	{
-		cout<<"Error in opening source file..!!";
+		std::cout<<"Error in opening source file..!!";
 		getch();
 		exit(1);
 	}
@@ -32,12 +42,12 @@ string ContentsOf(string file){
 
 }
 
-int SizeOf(string file){
+int Sender::SizeOf(std::string file){
 
-    ifstream contents(file, ios::binary);
-    contents.seekg(0, ios::end);
+    std::ifstream contents(file, std::ios::binary);
+    contents.seekg(0, std::ios::end);
     int size = contents.tellg();
     contents.close();
     return size;
 
-}
+} 
