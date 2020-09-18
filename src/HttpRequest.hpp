@@ -17,8 +17,15 @@ class HttpV1Dot1GetRequest : public HttpRequest{
         std::string path;
         Version version;
         std::string host;
+        std::string connection;
+        std::string cacheControl;
+        std::string upgradeInsecureRequests;
         std::string userAgent;
         std::string accept;
+        std::string secFetchSite;
+        std::string secFetchMode;
+        std::string secFetchUser;
+        std::string secFetchDest;
         std::string acceptLanguage;
         std::string acceptEncoding;
 
