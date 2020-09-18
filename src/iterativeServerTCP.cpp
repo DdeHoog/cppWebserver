@@ -5,7 +5,7 @@
 #include <sstream>
 #include <vector>
 
-int main() {
+int server() {
     int number = 666;
 
     //intialising winsock
