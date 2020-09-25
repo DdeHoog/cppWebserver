@@ -1,8 +1,8 @@
 set(BINARY ${CMAKE_PROJECT_NAME}_test)
 
-file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false *.h *.cpp)
-
-set(SOURCES ${TEST_SOURCES})
+# add test files here
+# set(TEST_SOURCES main.cpp ReceiverTests.cpp SenderTests.cpp)
+set(TEST_SOURCES main.cpp ReceiverTests.cpp)
 
 add_executable(${BINARY} ${TEST_SOURCES})
 

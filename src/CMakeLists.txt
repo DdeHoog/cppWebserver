@@ -1,8 +1,7 @@
 set(BINARY ${CMAKE_PROJECT_NAME})
 
-file(GLOB_RECURSE SOURCES LIST_DIRECTORIES true *.h *.cpp)
-
-set(SOURCES ${SOURCES})
+# add all source files here, except for main
+set(SOURCES main.cpp HttpServer.cpp HttpRequest.hpp HttpParser.cpp HttpParser.hpp Utils.hpp Sender.cpp Sender.hpp)
 
 add_executable(${BINARY}_run ${SOURCES})
 
