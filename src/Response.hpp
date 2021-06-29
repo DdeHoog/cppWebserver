@@ -1,17 +1,20 @@
-#ifndef SENDER_HPP
-#define SENDER_HPP
+#ifndef RESPONSE_HPP
+#define RESPONSE_HPP
 
+#include "HttpRequest.hpp"
+#include "HttpResponse.hpp"
 #include <iostream>
 #include <fstream>
 #include <WS2tcpip.h>
 #include <thread>
 #include <sstream>
 #include <vector>
+#include <conio.h>
+#include <stdio.h>
 
-
-class Sender {
+class Response {
     public:
-        std::string Send(std::string host, std::string file, std::string type, std::string version, std::string errorcode, std::string statusmessage);
+        HttpV1Dot1GetResponse* BuildResponse(HttpV1Dot1GetRequest* req);
         std::string ContentsOf(std::string file);
         int SizeOf(std::string file);
 };

@@ -1,6 +1,7 @@
 set(BINARY ${CMAKE_PROJECT_NAME}_test)
 
-set(TEST_SOURCES main.cpp ReceiverTests.cpp)
+# add test files
+set(TEST_SOURCES main.cpp ReceiverTests.cpp ResponseTests.cpp)
 
 add_executable(${BINARY} ${TEST_SOURCES})
 
